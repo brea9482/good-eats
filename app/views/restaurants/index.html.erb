@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="large-12">
+    <h1>Restaurants</h1>
+
+    <% if !@restaurants.empty? %>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>City</th>
+          <th>State</th>
+          <th></th>
+        </tr>
+
+        <% @restaurants.each do |restaurant| %>
+          <tr>
+            <td><%= restaurant.name %></td>
+            <td><%= restaurant.category %></td>
+            <td><%= restaurant.city %></td>
+            <td><%= restaurant.state %></td>
+            <td><%= link_to 'View Restaurant', restaurant_path(restaurant) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
+
+    <%= link_to 'Add a new restaurant here', new_restaurant_path %>
+
+  </div>
+</div>

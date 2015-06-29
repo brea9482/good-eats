@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="large-12">
+    <h1>Add a new restaurant</h1>
+
+      <%= form_for @restaurant do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :address %>
+        <%= f.text_area :address %>
+
+        <%= f.label :city %>
+        <%= f.text_area :city %>
+
+        <%= f.label :state %>
+        <%= f.select :state, options_for_select(us_states) %>
+
+        <%= f.label :zipcode %>
+        <%= f.text_area :zipcode %>
+
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+
+        <%= f.label :category %>
+        <%= f.select :category, options_for_select(categories), :include_blank => true %>
+
+        <%= f.submit "Add a new restaurant!", :class => "tiny button" %>
+      <% end %>
+    <%= link_to 'Back', restaurants_path%>
+  </div>
+</div>
